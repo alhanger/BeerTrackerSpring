@@ -10,10 +10,13 @@ import javax.persistence.Id;
  */
 @Entity
 public class Beer {
+
     @Id
     @GeneratedValue
     Integer id;
 
     String name;
     String type;
+    Integer calories;
+
 }
