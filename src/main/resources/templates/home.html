@@ -6,19 +6,27 @@
 </head>
 <body>
 
-<a href="/">All</a> |
-<a href="/?type=Ale">Ales</a> |
-<a href="/?type=Lager">Lagers</a> |
-<a href="/?type=Pilsner">Pilsner</a> |
-<a href="/?type=Stout">Stout</a> |
-<a href="/?type=Other">Other</a>
+<a href="/logout">Logout</a>
 
 <br><br>
 
+<a href="/">All</a> ||
+<a href="/?type=Ale">Ales</a> ||
+<a href="/?type=Lager">Lagers</a> ||
+<a href="/?type=Pilsner">Pilsner</a> ||
+<a href="/?type=Stout">Stout</a> ||
+<a href="/?type=Other">Other</a> ||
+<a href="/?showMine=true">My Beers</a>
+
+<br><br>
+
+<h4>Search Beers</h4>
 <form action="/" method="get">
     <input type="text" placeholder="Search" name="search">
     <button type="submit">Submit</button>
 </form>
+
+<br><br>
 
 <form action="add-beer" method="post">
     <input type="text" placeholder="Beer Name" name="beername"/>
@@ -33,8 +41,10 @@
     <button type="submit">Submit</button>
 </form>
 
+<br>
+
 {{#beers}}
-{{name}} - {{type}} - Calories: {{calories}}<br>
+{{name}} - {{type}} - Calories: {{calories}} by {{#user}}{{name}}{{/user}}<br>
 {{/beers}}
 
 </body>
